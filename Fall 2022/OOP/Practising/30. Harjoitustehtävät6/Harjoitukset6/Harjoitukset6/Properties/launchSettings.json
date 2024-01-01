@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Harjoitukset6": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}
