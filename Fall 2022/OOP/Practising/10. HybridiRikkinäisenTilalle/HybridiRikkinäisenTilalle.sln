@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HybridiRikkinäisenTilalle", "HybridiRikkinäisenTilalle\HybridiRikkinäisenTilalle.csproj", "{EFB70D1F-2EC8-4A0E-93AD-E3143A8DBCDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFB70D1F-2EC8-4A0E-93AD-E3143A8DBCDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB70D1F-2EC8-4A0E-93AD-E3143A8DBCDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB70D1F-2EC8-4A0E-93AD-E3143A8DBCDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB70D1F-2EC8-4A0E-93AD-E3143A8DBCDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F60E511-654E-4906-974A-0D4055B4358C}
+	EndGlobalSection
+EndGlobal
