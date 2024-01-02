@@ -1,0 +1,77 @@
+﻿<Window x:Class="Harjoitustehtävä_1._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Harjoitustehtävä_1._2"
+        mc:Ignorable="d"
+        Title="Ukot" Height="450" Width="800">
+    <Canvas Name="myCanvas">
+        <Ellipse Height="74" Stroke="Black" Width="74
+                 " Canvas.Left="105" Canvas.Top="54"/>
+
+        <Line Canvas.Left="49" Canvas.Top="162" X1="10" X2="100" Stroke="Black" RenderTransformOrigin="0.5,0.5" >
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-39.174"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+
+        <Line Stroke="Black" X1="10" X2="100" Canvas.Left="133" Canvas.Top="159" RenderTransformOrigin="0.5,0.5" Width="90">
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="44.307"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+
+        <Line Stroke="Black" X1="10" X2="100" Canvas.Left="93" Canvas.Top="183" RenderTransformOrigin="0.5,0.5">
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90.0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+
+        <Line Stroke="Black" X1="10" X2="100" Canvas.Left="68" Canvas.Top="270" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-61.568"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+
+        <Line Stroke="Black" X1="10" X2="100" Canvas.Left="113" Canvas.Top="258" RenderTransformOrigin="0.5,0.5">
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="60.985"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+
+
+
+
+
+
+
+
+
+    </Canvas>
+</Window>

@@ -1,0 +1,83 @@
+﻿<Window x:Class="Tehtävä_2._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tehtävä_2._1"
+        mc:Ignorable="d"
+        Title="Laskutus" Height="450" Width="800" MinHeight="400" MinWidth="800">
+    <Grid>
+<!-- Määritellään gridit-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="225*"/>
+                <RowDefinition Height="225*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400*"/>
+                <ColumnDefinition Width="400*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- CompoBox ja sen sisältä, Suomi valittuna-->
+            <ComboBox HorizontalAlignment="Left" Margin="190,151,0,0" VerticalAlignment="Top" Width="200">
+
+                <ComboBoxItem Content="Suomi" IsSelected="True"/>
+                <ComboBoxItem Content="Ruotsi"/>
+                <ComboBoxItem Content="Viro"/>
+
+            </ComboBox>
+            <!--Textboxien määrittely-->
+            <TextBox HorizontalAlignment="Left" Margin="190,128,0,0"  Text="" VerticalAlignment="Top" Width="200"/>
+            <TextBox HorizontalAlignment="Left" Margin="190,82,0,0"  Text="" VerticalAlignment="Top" Width="200"/>
+            <TextBox HorizontalAlignment="Left" Margin="190,59,0,0"  Text="" VerticalAlignment="Top" Width="200"/>
+            <TextBox HorizontalAlignment="Left" Margin="190,105,0,0" Text="" VerticalAlignment="Top" Width="200"/>
+
+            <!--Labeleiden määrittely-->
+            <Label Content="Laskutusosoite" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+            <Label Content="Nimi" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Content="Katuosoite" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top"/>
+            <Label Content="Postinumero" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top"/>
+            <Label Content="Postitoimipaikka" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top"/>
+            <Label Content="Maa" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+
+            <Label Grid.Column="1" Content="Toimitusosoite" HorizontalAlignment="Left"
+                   Margin="10,19,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+            <Label Grid.Column="1" Content="Nimi" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Grid.Column="1" Content="Katuosoite" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Grid.Column="1" Content="Postinumero" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Grid.Column="1" Content="Postitoimipaikka" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Grid.Column="1" Content="Maa" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="100"/>
+            
+
+            <!--Textboxien määrittelyä-->
+            <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="190,59,0,0" Text="" VerticalAlignment="Top" Width="200"/>
+            <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="190,82,0,0" Text="" VerticalAlignment="Top" Width="200"/>
+            <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="190,105,0,0" Text="" VerticalAlignment="Top" Width="200"/>
+            <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="190,128,0,0" Text="" VerticalAlignment="Top" Width="200"/>
+            <!--ComboBoxin määrittely, Ruotsi valittuna-->
+            <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="190,151,0,0" VerticalAlignment="Top" Width="200">
+
+                <ComboBoxItem Content="Suomi"/>
+                <ComboBoxItem Content="Ruotsi" IsSelected="True"/>
+                <ComboBoxItem Content="Viro"/>
+
+            </ComboBox>
+
+            <!--Textbox lisätiedoillla, texwrapping, entteri, scrollbar-->
+            <TextBox Grid.ColumnSpan="2" Margin="10,217,10,10" Grid.RowSpan="2" TextWrapping="Wrap" Text="Lisätietoja tähän"
+                     AcceptsReturn="True" VerticalScrollBarVisibility="Visible"
+                     ScrollBar.Scroll="TextBox_Scroll"  
+            />
+
+
+
+
+
+
+
+        </Grid>
+
+
+    </Grid>
+</Window>

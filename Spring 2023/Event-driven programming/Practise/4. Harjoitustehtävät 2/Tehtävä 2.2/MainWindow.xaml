@@ -1,0 +1,77 @@
+﻿<Window x:Class="Tehtävä_2._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tehtävä_2._2"
+        mc:Ignorable="d"
+        Title="Pizza" Height="610" Width="420" MinHeight="610" MinWidth="420"> 
+    
+    <!--Pohjana StackPanel-->
+    <StackPanel>
+        <!--ComboBox ja itemit GroupBoxin sisällä-->
+        <GroupBox Height="76" Header="Valitse pizzeria">
+            <ComboBox HorizontalAlignment="Left" Margin="10,0,0,0" Width="380" Height="30">
+                <ComboBoxItem Content="Minttu" IsSelected="True"/>
+                <ComboBoxItem Content="Express"/>
+                <ComboBoxItem Content="Pizza Master"/>
+                <ComboBoxItem Content="Niinivaaran pitsapojat"/>
+                <ComboBoxItem Content="Kotipitsa"/>
+            </ComboBox>
+        </GroupBox>
+        
+        <!--Stack panel GroupBoxin sisällä. Checkboxit täytteille-->
+        <GroupBox Height="187" Header="Valitse täytteet">
+            <StackPanel>
+                <CheckBox Content="Kinkku"/>
+                <CheckBox Content="Ananas"/>
+                <CheckBox Content="Sipuli"/>
+                <CheckBox Content="Jalapeno"/>
+                <CheckBox Content="Tonnikala"/>
+                <CheckBox Content="Pepperoni"/>
+                <CheckBox Content="Salami"/>
+                <CheckBox Content="Herkkusieni"/>
+                <CheckBox Content="Katkarapu"/>
+                <CheckBox Content="Sinihomejuusto"/>
+                
+            </StackPanel>
+
+            <!--StackPanel GroupBoxin sisällä, horizontal orientation-->
+        </GroupBox>
+        <GroupBox Height="50" Header="Maksutapa">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Content="Käteinen" IsChecked="True" VerticalAlignment="Center"/>
+                <RadioButton Content="Tilisiirto" Margin="10, 0, 0, 0" VerticalAlignment="Center"/>
+                <RadioButton Content="Visa" Margin="10, 0, 0, 0" VerticalAlignment="Center"/>
+
+            </StackPanel>
+            
+        </GroupBox>
+        
+        <!--StackPanel GroupBoxin sisällä, horizontal orientation-->
+        <GroupBox Height="50" Header="Toimitustapa">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Content="Nouto" VerticalAlignment="Center" IsChecked="True"/>
+                <RadioButton Content="Kotiinkuljetus" VerticalAlignment="Center" Margin="10, 0, 0, 0"/>
+            </StackPanel>
+            <!--TextBox GroupBoxin sisällä-->
+        </GroupBox>
+        <GroupBox Header="Lisätietoja" Height="160">
+            <TextBox TextWrapping="Wrap" Text="Jos valitsit kotiinkuljetuksen niin anna tähän osoitetiedot" AcceptsReturn="True"/>
+        </GroupBox>
+
+        <!--Buttonin määrittely-->
+        <Button Content="Tilaa" Height="44" FontSize="20" FontWeight="Bold"/>
+
+
+
+
+
+
+
+
+
+
+
+    </StackPanel>
+</Window>

@@ -1,0 +1,54 @@
+﻿<Window x:Class="Harjoitustehtävä_1._5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Harjoitustehtävä_1._5"
+        mc:Ignorable="d"
+        Title="Mikroaaltouuni edestä" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Ruoka tulee tänne" HorizontalAlignment="Center" Margin="0,204,0,0" VerticalAlignment="Top" Height="84" Width="256" FontSize="25"
+               FontWeight="Bold"/>
+        <StackPanel Grid.Column="1">
+            <Label Content="Aika näytetään tässä" FontSize="16"/>
+            <Grid ShowGridLines="True" Height="401" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <Button Content="1"/>
+                <Button Content="2" Grid.Column="1"/>
+                <Button Content="3" Grid.Column="2"/>
+                <Button Content="4" Grid.Row="1" Grid.Column="0"/>
+                <Button Content="5" Grid.Row="1" Grid.Column="1"/>
+                <Button Content="6" Grid.Row="1" Grid.Column="2"/>
+                <Button Content="7" Grid.Row="2" Grid.Column="0"/>
+                <Button Content="8" Grid.Row="2" Grid.Column="1"/>
+                <Button Content="9" Grid.Row="2" Grid.Column="2"/>
+                <Button Content="0" Grid.Row="3" Grid.Column="0"/>
+                <Button Content="Start" Grid.Row="3" Grid.Column="1"/>
+                <Button Content="Stop" Grid.Row="3" Grid.Column="2"/>
+
+
+            </Grid>
+
+
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>

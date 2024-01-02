@@ -1,0 +1,14 @@
+﻿<Window x:Class="Harjoitustehtävä_1._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Harjoitustehtävä_1._1"
+        mc:Ignorable="d"
+        Title="Ohjelmointi on kivaa" Height="450" Width="800">
+    <Canvas>
+        <Button Content="Klikkaa minua" Canvas.Left="298" Canvas.Top="174" Height="76" Width="204"
+                HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+    </Canvas>
+</Window>
