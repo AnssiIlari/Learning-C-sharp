@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Menu_ja_Toolbar</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="delete.jpg" />
+    <None Remove="redo.jpg" />
+    <None Remove="Save.jpg" />
+    <None Remove="Undo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="delete.jpg" />
+    <Resource Include="redo.jpg" />
+    <Resource Include="Save.jpg" />
+    <Resource Include="Undo.jpg" />
+  </ItemGroup>
+
+</Project>

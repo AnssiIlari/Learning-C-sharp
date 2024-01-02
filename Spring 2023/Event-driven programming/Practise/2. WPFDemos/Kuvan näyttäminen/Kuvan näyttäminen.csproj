@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Kuvan_näyttäminen</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Acer_Wallpaper_01_5000x2814.jpg" />
+    <None Remove="Acer_Wallpaper_02_5000x2813.jpg" />
+    <None Remove="Acer_Wallpaper_03_5000x2814.jpg" />
+    <None Remove="Planet9_Wallpaper_5000x2813.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Acer_Wallpaper_01_5000x2814.jpg" />
+    <Resource Include="Acer_Wallpaper_02_5000x2813.jpg" />
+    <Resource Include="Acer_Wallpaper_03_5000x2814.jpg" />
+    <Resource Include="Planet9_Wallpaper_5000x2813.jpg" />
+  </ItemGroup>
+
+</Project>

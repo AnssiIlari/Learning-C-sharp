@@ -1,0 +1,19 @@
+﻿<Window x:Class="HyväPäivä.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HyväPäivä"
+        mc:Ignorable="d"
+        Title="Muistutus" Height="450" Width="450">
+    <StackPanel>
+        <Label Content="Tänään on hyvä päivä" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Muista hymyillä!" FontSize="16" />
+        <Button Content="OK" FontSize="16"/>
+
+
+
+
+
+    </StackPanel>
+</Window>

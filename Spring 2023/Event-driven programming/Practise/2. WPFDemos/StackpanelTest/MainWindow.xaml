@@ -1,0 +1,17 @@
+﻿<Window x:Class="StackpanelTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StackpanelTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Ellipse Width="100" Height="100" Fill="Red" Margin="0,0,0,5" Stroke="Black" StrokeThickness="5"/>
+        <Ellipse Width="100" Height="100" Fill ="Yellow" Margin="0,0,0,5" Stroke="Black" StrokeThickness="5"/>
+        <Ellipse Width="100" Height="100" Fill="Green" Margin="0,0,0,5" Stroke="Black" StrokeThickness="5"/>
+
+        <!--<StackPanel x:Name="myStack" Orientation="Horizontal" HorizontalAlignment="Center"></StackPanel>-->
+        
+    </StackPanel>
+</Window>

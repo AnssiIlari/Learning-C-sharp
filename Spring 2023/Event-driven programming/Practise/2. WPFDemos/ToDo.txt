@@ -1,0 +1,65 @@
+WINDOW - harjoituksia
+
+1.
+Tee uusi WPF projekti ja muuta projektin oletusikkunan otsikoksi teksti "My first App".
+Muuta sovelluksen käyttöliittymän oletus koko: 600 * 600 (width * height)
+Säädä käyttöliittymän minimi kooksi 400 * 400
+Muuta käyttöliittymän taustaväriksi BurlyWood
+
+Tee kaikki em. asiat käyttäen vain XAML koodia.
+
+1.1
+Tee edellä luomaasi projektiin uusi käyttäliittymä ja anna sen nimeksi SecondWindow
+Muuta App.xaml määritystä niin, että oletuksena sovelluksen käynnistyessä SecondWindow aukeaa.
+
+Tee kaikki kohdassa 1 tekemäsi muutokset myös SecondWindow käyttöliittymään käyttäen nyt vain C# koodia.
+
+1.2
+Tee SecondWindow käyttöliittymän luojassa (constructor) uusi ilmentymä kohdassa 1 luomasta käyttöliittymästä (MainWindow).
+Kutsu ilmentymän .Show() metodia. Mitä tapahtui?
+Aseta C# koodissa ilmentymän .Topmost arvoon true ja testaa sovellusta. MIkä muuttui?
+Muuta .Show metodi nyt .ShowDialog ja testaa sovellusta. Miten sovelluksen toiminta muuttui nyt?
+
+1.3
+Muuta SecondWindow käyttöliittymän ResizeMode arvoon NoResize käyttäen XAML koodia.
+Mitä muutoksia käyttäliittymän ulkoasussa ja toiminnallisuudessa tapahtui?
+Tutki ja testaa myös muut ResizeMode arvot...
+
+
+CANVAS - harjoituksia
+2. 
+Tee uusi WPF projekti ja muuta projektin oletusikkunan otsikoksi teksti "Canvas harjoituksia".
+Lisää ikkunan juurikomponentiksi Canvas komponentti.
+Lisää Canvas komponenttiin Rectangle seuraavin ominaisuuksin
+- pituus 100 
+- korkeus 20
+- väri DarkOliveGreen
+
+Muuta tekemäsi suorakaidekomponentin kohta Canvaksella niin, että se on vasemmasta reunasta 10 ja ylhäältä 10
+
+Tee kaikki em. asiat käyttäen vain XAML koodia / designeria.
+
+2.1 
+Lisää Canvas komponenttiin oranssi ympyrä (Ellipse) ja määritä sen pituus ja leveys arvoon 60. 
+Määritä ympyrän reunaviivan (Stroke) väriksi musta ja sen paksuudeksi 2. 
+Aseta luomasi ympyrä kanvaksella niin, että se on ikkunan alhaalta 20 ja oikeasta reunasta 20.
+
+Lisää Canvas komponentille musta viiva (Line). Aseta viivan pituudeksi 100 ja asettele viiva niin, että se alkaa edellä piirtämäsi ympyrän keskeltä ja se osoittaa ympyrästä ylöspäin.
+
+Tee kaikki em. asiat käyttäen vain XAML koodia / designeria.
+
+2.2
+Lisää Canvas komponenttiin haluamaasi kohtaan WPF määrityksin painonappi (Button) ja anna sen nimeksi (Name) btnButton.
+Muuta näytön konstruktorissa luomasi painikkeen teksti (Content) C# koodilla muotoon "namiskuukkeli".
+Testaa sovelluksesi toiminnallisuutta.
+Muuta C# koodissa painikkeen IsEnabled arvo muotoon false ja testaa nyt toimintaa...
+Muuta painikkeen Visibility arvoon Hidden käyttäen nyt Visual Studion Properties välilehteä
+Testaa sovellusta...
+
+Jos muutan komponentin ominaisuutta Properties välilehdeltä niin näkyykö tämä muutos XAML koodissa?
+Jos muutan komponentin ominaisuutta C# koodilla niin näkyykö tämä muutos XAML koodissa?
+
+2.3
+Anna Canvas komponentille nimi (name) esim. myCanvas.
+Muuta myCanvas komponentin .Background ominaisuus näytön luojametodissa arvoon Brushes.Brown.
+Jos et määrittele Canvas komponentilla nimeä niin voitko viitata siihen C# koodissa?

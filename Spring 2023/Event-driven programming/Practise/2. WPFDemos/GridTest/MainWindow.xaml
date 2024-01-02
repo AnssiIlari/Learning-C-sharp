@@ -1,0 +1,27 @@
+﻿<Window x:Class="GridTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GridTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition Width="400*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="225*"/>
+            <RowDefinition Height="225*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Content="Heikkoudet" HorizontalAlignment="Left" Margin="0,-5,0,0" VerticalAlignment="Top"
+               FontFamily="Bold" FontSize="50"/>
+        <Label Content="Vahvuudet" HorizontalAlignment="Left" Margin="-6,0,0,0" VerticalAlignment="Top"
+               FontFamily="Bold" FontSize="50"/>
+        <Label Content="Uhat" HorizontalAlignment="Left" Margin="0,217,0,0" VerticalAlignment="Top" Grid.RowSpan="2"
+               FontFamily="Bold" FontSize="50"/>
+        <Label Grid.Column="1" Content="Mahdollisuudet" HorizontalAlignment="Left" Margin="0,217,0,0" VerticalAlignment="Top" Grid.RowSpan="2"
+               FontFamily="Bold" FontSize="50"/>
+    </Grid>
+</Window>

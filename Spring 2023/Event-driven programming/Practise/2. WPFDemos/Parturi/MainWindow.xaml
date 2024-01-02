@@ -1,0 +1,40 @@
+﻿<Window x:Class="Parturi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Parturi"
+        mc:Ignorable="d"
+        Title="Tervetuloa parturiin" Height="550" Width="850">
+    <Canvas>
+        <GroupBox Height="100" Header="Valitse palvelut" Width="300" Canvas.Left="20" Canvas.Top="50">
+            <StackPanel>
+                <CheckBox Content="Leikkaus" HorizontalAlignment="Center" Width="267" Margin="0,5,0,0"/>
+                <CheckBox Content="Värjäys" HorizontalAlignment="Center" Width="267"/>
+                <CheckBox Content="Raidat" HorizontalAlignment="Center" Width="267"/>
+                <CheckBox Content="Räpsyttimien pidennys" HorizontalAlignment="Center" Width="267"/>
+            </StackPanel>
+
+
+        </GroupBox>
+
+        <GroupBox Height="100" Header="Maksutapa" Width="300" Canvas.Right="20" Canvas.Top="50">
+
+            <StackPanel>
+                <RadioButton Content="Käteinen" Margin="0,5,0,0" IsChecked="True"/>
+                <RadioButton Content="Lasku"/>
+                <RadioButton Content="Lahjakortti"/>
+            </StackPanel>
+
+        </GroupBox>
+
+        <Button Content="Lähetä tilaus" Canvas.Left="706" Canvas.Top="386" Height="38" Width="84"/>
+
+        <GroupBox Height="100" Header="Lisätietoja" Width="780" Canvas.Left="10" Canvas.Top="263" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBox HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Width="735" Height="67" AcceptsReturn="True"/>
+
+        </GroupBox>
+
+
+    </Canvas>
+</Window>
