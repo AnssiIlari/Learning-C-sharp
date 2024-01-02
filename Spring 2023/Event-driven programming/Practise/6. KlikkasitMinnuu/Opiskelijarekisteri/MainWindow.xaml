@@ -1,0 +1,70 @@
+﻿<Window x:Class="Opiskelijarekisteri.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Opiskelijarekisteri"
+        mc:Ignorable="d"
+        Title="Nimirekisteri" Height="400" Width="500">
+    <Window.DataContext>
+        <local:Student/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <Menu>
+                <MenuItem Header="File">
+                    <MenuItem Header="Lista..." Click="ShowListView"/>
+                    <MenuItem Header="Close" Click="CloseClicked"/>
+                </MenuItem>
+                <MenuItem Header="About">
+                    <MenuItem Header="Version info..." Click="VersionClick"/>
+                </MenuItem>
+            </Menu>
+
+            <ToolBar>
+                <Button Content="&lt;&lt;" Width="25" Click="FirstClick"/>
+                <Button Content="&lt;" Width="25" Click="PrevClick"/>
+                <Separator/>
+                <Button Content="&gt;" Width="25" Click="NextClick"/>
+                <Button Content="&gt;&gt;" Width="25" Click="LastClick"/>
+            </ToolBar>
+        </StackPanel>
+
+        <Canvas Grid.Row="1">
+            <Label Content="Numero" Canvas.Left="10" Canvas.Top="25"/>
+            <Label Content="Nimi" Canvas.Left="10" Canvas.Top="51"/>
+            <Label Content="Vuosi" Canvas.Left="10" Canvas.Top="77"/>
+            <Label Content="Op" Canvas.Left="10" Canvas.Top="103"/>
+
+            <TextBox Text="{Binding Path=Number}" Canvas.Left="90" TextWrapping="Wrap" Canvas.Top="29" Width="120"/>
+
+            <TextBox Canvas.Left="90" TextWrapping="Wrap" Text="{Binding Name}" Canvas.Top="55" Width="120"/>
+
+
+            <ComboBox SelectedItem="{Binding StartYear}"
+                      x:Name="comYears"
+                      Canvas.Left="90"
+                      Canvas.Top="79" 
+                      Width="120"/>
+
+            <TextBox Canvas.Left="90" TextWrapping="Wrap" Text="{Binding Credits}" Canvas.Top="107" Width="120"/>
+            <Button Content="Add" Canvas.Left="215" Canvas.Top="106" Click="Button_Click"/>
+
+
+            <ComboBox x:Name="comGenders" SelectedValue="{Binding Gender}" DisplayMemberPath="Description" SelectedValuePath="ID"
+                      Canvas.Left="90" Canvas.Top="151" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            
+            
+            <Label Content="Sukupuoli" Canvas.Left="10" Canvas.Top="149" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+
+        </Canvas>
+
+    </Grid>
+</Window>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="Tehtävä_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tehtävä_3"
+        mc:Ignorable="d"
+        Title="Hirsipuu" Height="450" Width="800" KeyDown="Window_KeyDown" MaxHeight="450" MaxWidth="800">
+    <Canvas Name="myCanvas">
+        <!--Hirsipuun ja jalustan piirtämistä-->
+        <Ellipse Height="100" Stroke="Black" Width="233" Fill="Green" Canvas.Left="97" Canvas.Top="370"/>
+        <Line Y1="-50" Y2="225" Stroke="Black" StrokeThickness="2" Canvas.Left="214" Canvas.Top="150"/>
+        <Line X1="100" X2 ="400" Stroke="Black" StrokeThickness="2" Canvas.Left="113" Canvas.Top="100"/>
+        <Line X1="10" X2="100" Stroke="Black" StrokeThickness="2" Canvas.Left="195" Canvas.Top="134" RenderTransformOrigin="0.5,0.5">
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-45"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+        <Line X1="10" X2="60" Stroke="Black" StrokeThickness="1" Canvas.Left="481" Canvas.Top="118" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+        <!--TextBlockiin muodostuu arvattava sana-->
+        <TextBlock x:Name="txtBlock" Canvas.Left="644" TextWrapping="Wrap" Text="*****" Canvas.Top="262" Height="43" Width="116" FontSize="38"
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        
+    </Canvas>
+</Window>
