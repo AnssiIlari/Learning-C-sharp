@@ -1,0 +1,25 @@
+﻿<Window x:Class="Tehtävä_1_Testiversio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tehtävä_1_Testiversio"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+
+
+    <Canvas x:Name="myCanvas">
+        <Label x:Name="lblA" Content="Label" Canvas.Left="276" Canvas.Top="204"/>
+        <Label x:Name="lblB" Content="Label" Canvas.Left="381" Canvas.Top="204"/>
+        <Label x:Name="lblC" Content="Label" Canvas.Left="485" Canvas.Top="204"/>
+
+
+
+
+
+
+    </Canvas>
+
+
+</Window>
+    
