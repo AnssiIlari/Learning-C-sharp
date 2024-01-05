@@ -1,0 +1,51 @@
+﻿<Window x:Class="KloHarjoitusTyö.NewInvoice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KloHarjoitusTyö"
+        mc:Ignorable="d"
+        Title="New Invoice" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="121,25,0,0"
+                    VerticalAlignment="Top" Width="120"
+                    SelectedDate="{Binding Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="datepicker"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="121,53,0,0" TextWrapping="Wrap"
+             VerticalAlignment="Top" Width="120" Text="{Binding InvoiceeName}" x:Name="invoiceeName"
+                 />
+        <Label Content="Address" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="121,76,0,0" TextWrapping="Wrap"
+             VerticalAlignment="Top" Width="120" Text="{Binding InvoiceeAddress}" x:Name="invoiceeAddress"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="714,85,0,0" VerticalAlignment="Top" 
+                Height="29" Width="46" Click="SaveInvoice"/>
+        <TextBox HorizontalAlignment="Left" Margin="475,28,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="210" Height="66" x:Name="additionalInfo"/>
+
+        <DataGrid Grid.Row="5" AutoGenerateColumns="False" ItemsSource="{Binding InvoiceLines}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Quantity" Width="60" Binding="{Binding Quantity}"/>
+                <DataGridComboBoxColumn Header="Product" DisplayMemberPath="Description" SelectedValuePath="ID"
+                                        SelectedValueBinding="{Binding ProductID}" x:Name="comProductColumn"/>
+                <!--<DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Command="{Binding DataContext.DeleteLineCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Additional information" HorizontalAlignment="Left" Margin="340,24,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
