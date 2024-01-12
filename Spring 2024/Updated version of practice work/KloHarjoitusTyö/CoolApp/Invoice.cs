@@ -11,7 +11,7 @@ namespace CoolApp
 {
 
     /// <summary>
-    /// Invoice luokka
+    /// Invoice class
     /// </summary>
     public class Invoice
     {
@@ -20,7 +20,7 @@ namespace CoolApp
 
         public ObservableCollection<InvoiceLine> InvoiceLines { get; set; }
 
-        public int InvoiceID { get; set; } // PK
+        public int InvoiceID { get; set; } // Primary key
 
         public string InvoicerName { get; set; }
         public string InvoicerAddress { get; set; }
@@ -36,14 +36,14 @@ namespace CoolApp
 
 
         /// <summary>
-        /// Parametriton konstruktori, saa arvot luontihetkellä
+        /// Constructor
         /// Luodaan myös laskurivit lista
         /// </summary>
         public Invoice()
         {
             InvoiceLines = new ObservableCollection<InvoiceLine>();
-            Date = DateTime.Now; // Luodaan päiväys luontihetkellä
-            DueDate = DateTime.Now.AddDays(14); // Eräpäivälle luontihetki + 14vrk
+            Date = DateTime.Now; // Created when invoice is created
+            DueDate = DateTime.Now.AddDays(14); // // Set the DueDate to the current date plus 14 days
             InvoicerName = "Rakennus Oy";
             InvoicerAddress = "Osoite 123, 00100 Helsinki";
         }
