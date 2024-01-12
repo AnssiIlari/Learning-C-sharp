@@ -14,35 +14,35 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KloHarjoitusTyö
+namespace CoolApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Repository repo; // vaihdettu repo, tarkasta
+        public Repository repo;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            repo = new Repository(); // uusi ilmentyä Repository luokasta
-            repo.CreateOrdersDb(); // tehdään tietokanta
-            repo.CreateProductsTable(); // tehdään products taulu
-            repo.AddDefaultProducts(); // lisätään oletustuotteet
+            repo = new Repository();
+            repo.CreateOrdersDb(); // Create database
+            repo.CreateProductsTable(); // Create products table
+            repo.AddDefaultProducts(); // Add default products
 
-            repo.CreateInvoiceTable(); // tehdään invoice taulu
-            repo.AddDefaultInvoices(); // lisätään oletuslaskut
+            repo.CreateInvoiceTable(); // Create invoice table
+            repo.AddDefaultInvoices(); // Add default invoices
 
-            repo.CreateInvoiceLineTable(); // tehdään invoiceline taulu
-            repo.AddDefaultInvoiceLines(); // lisätään oletuslaskurivit
+            repo.CreateInvoiceLineTable(); // Create invoice line table
+            repo.AddDefaultInvoiceLines(); // Add default invoice lines
 
-            comProducts.ItemsSource = repo.GetProducts(); // haetaan tuotteet comboboxiin
-            comInvoices.ItemsSource = repo.GetInvoices(); // haetaan laskut comboboxiin
+            comProducts.ItemsSource = repo.GetProducts(); // Get products to combobox
+            comInvoices.ItemsSource = repo.GetInvoices(); // Get invoices to combobox
         }
         /// <summary>
-        /// Aukaisee ikkunan jossa voi lisätä uuden tuotteen
+        /// Opens a window where you can add a new product
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -56,7 +56,7 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Aukaisee ikkunan jossa voi päivittää valitun tuotteen
+        /// Opens a window where you can update a selected product
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -76,7 +76,7 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Poistaa valitun tuotteen + varoitukset
+        /// Delete selected product + warnings
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -98,7 +98,7 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Event handler, aukaisee ikkunan jossa näkyy kaikki tuotteet
+        /// Opens a window where you can see all products
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -110,7 +110,7 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Aukaisee ikkunan jossa näkyy yksittäisen laskun tiedot
+        /// Open a window where you can see details of a single invoice
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -122,7 +122,7 @@ namespace KloHarjoitusTyö
             comInvoices.ItemsSource = repo.GetInvoices(); // Lisäys
         }
         /// <summary>
-        /// Aukaisee ikkunan jossa voi tehdä uuden laskun
+        /// Opens a window where you can create a new invoice
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -134,7 +134,7 @@ namespace KloHarjoitusTyö
         }
         
         /// <summary>
-        /// Aukaisee ikkunan joka listaa kaikki laskut
+        /// Opens a window where you can see all invoices
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -145,7 +145,7 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Vaihtoo MainWindown taustavärin satunnaiseksi
+        /// Change MainWindow background color to random
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -158,7 +158,7 @@ namespace KloHarjoitusTyö
         }
         
         /// <summary>
-        /// Palauttaa MainWindown taustavärin alkuperäiseksi
+        /// Change MainWindow background color to original
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

@@ -12,31 +12,34 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace KloHarjoitusTyö
+namespace CoolApp
 {
     /// <summary>
-    /// Interaction logic for AddNewProduct.xaml
+    /// Interaction logic for UpdateProduct.xaml
     /// </summary>
-    public partial class AddNewProduct : Window
+    public partial class UpdateProduct : Window
     {
-        public AddNewProduct()
+        public UpdateProduct(Product product)
         {
             InitializeComponent();
-            this.DataContext = new Product();
+
+            this.DataContext = product;
         }
         /// <summary>
-        /// Lisää tuotteen 
+        /// updates the product information
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateButton_click(object sender, RoutedEventArgs e)
         {
             var product = (Product)this.DataContext;
 
             var repo = new Repository();
-            repo.AddProduct(product);
+            repo.UpdateProduct(product);
 
             DialogResult = true;
+
+
         }
     }
 }

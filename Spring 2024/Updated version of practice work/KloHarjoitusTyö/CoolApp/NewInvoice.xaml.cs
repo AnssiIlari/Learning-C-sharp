@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace KloHarjoitusTyö
+namespace CoolApp
 {
     public partial class NewInvoice : Window
 
@@ -29,19 +29,18 @@ namespace KloHarjoitusTyö
             InitializeComponent();
 
 
-            var newInvoice = new Invoice // Uuden laskun luontia
+            var newInvoice = new Invoice // Creating new invoice
             {
                 InvoiceID = 0,
                 Date = DateTime.Today,
                 InvoiceeName = "",
                 InvoiceeAddress = "",
-                //InvoiceLines = new ObservableCollection<InvoiceLine>()
             };
 
             Repository repo = new Repository();
-            repo.SaveInvoice(newInvoice); // tallennetaan lasku
+            repo.SaveInvoice(newInvoice); // save
 
-            newInvoice.InvoiceID = repo.GetLastInvoiceId(); // Haetaan seuraava id
+            newInvoice.InvoiceID = repo.GetLastInvoiceId(); // Gets next id
 
             this.DataContext = newInvoice;
             comProductColumn.ItemsSource = repo.GetProducts();
@@ -50,7 +49,7 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Tallentaa laskun
+        /// Saves the invoice to the database
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -59,7 +58,7 @@ namespace KloHarjoitusTyö
 
 
             var invoice = (Invoice)this.DataContext;
-            invoice.Lisatiedot = additionalInfo.Text;
+            invoice.AdditionalInfo = additionalInfo.Text;
 
             Repository repo = new Repository();
             repo.SaveNewInvoice(invoice);

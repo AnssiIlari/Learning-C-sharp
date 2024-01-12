@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Documents;
 
-namespace KloHarjoitusTyö
+namespace CoolApp
 {
     public class Repository
     {
@@ -19,7 +19,7 @@ namespace KloHarjoitusTyö
         private string? localWithDb = Environment.GetEnvironmentVariable("KLOSQLWithDB");
 
         /// <summary>
-        /// Metodi tietokannan luomiseen
+        /// Method for creating the database
         /// </summary>
         public void CreateOrdersDb()
         {
@@ -37,7 +37,7 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Metodi products taulun luomiseen
+        /// Method for creating the products table
         /// </summary>
         public void CreateProductsTable()
         {
@@ -47,7 +47,7 @@ namespace KloHarjoitusTyö
 
                 string createTable = "CREATE TABLE Products(ID INT NOT NULL PRIMARY KEY," +
                     " Description VARCHAR(50)," +
-                    " Price INT(10), Unit VARCHAR(50), Discontinued TINYINT(1) NOT NULL DEFAULT 0);"; // Lis'tty Discontinued ->
+                    " Price INT(10), Unit VARCHAR(50), Discontinued TINYINT(1) NOT NULL DEFAULT 0);";
 
                 MySqlCommand cmd = new MySqlCommand(createTable, conn);
                 cmd.ExecuteNonQuery();
@@ -55,9 +55,9 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Metodi Invoice taulun luomiseen
+        /// Method for creating the invoice table
         /// </summary>
-        public void CreateInvoiceTable()  // tarkasta 255
+        public void CreateInvoiceTable()
         {
             using (MySqlConnection conn = new MySqlConnection(localWithDb))
             {
@@ -79,7 +79,7 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Metodi invoiceLine taulun luomiseen
+        /// Method for creating the invoiceLine table
         /// </summary>
         public void CreateInvoiceLineTable()
         {
@@ -101,7 +101,7 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Metodi oletustuotteiden lisäämiseen
+        /// Method for adding default products
         /// </summary>
         public void AddDefaultProducts()
         {
@@ -133,7 +133,7 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Metodi oletuslaskujen lisäämiseen
+        /// Method for adding default invoices
         /// </summary>
         public void AddDefaultInvoices()
         {
@@ -166,7 +166,7 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Metodi oletuslaskurivien lisäämiseen
+        /// Method for adding default invoice lines
         /// </summary>
         public void AddDefaultInvoiceLines()
         {
@@ -199,16 +199,16 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Metodi tuotteiden hakuun tietokannasta
+        /// Method for getting products from the database
         /// </summary>
-        /// <returns> Palauttaa Observablecollection tuotteista </returns>
+        /// <returns> returns ObservableCollection from products </returns>
         public ObservableCollection<Product> GetProducts()
         {
             var products = new ObservableCollection<Product>();
 
             using (MySqlConnection conn = new MySqlConnection(localWithDb))
             {
-                conn.Open(); // HUOM TÄMÄ HAKEE VAIN NE TUOTTEET JOTKA EIVÄT OLE DISCONTINUED
+                conn.Open(); // Gets only the produts that are not discontinued
 
                 MySqlCommand cmd = new MySqlCommand("SELECT * FROM products WHERE Discontinued = 0", conn);
 
@@ -230,7 +230,7 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Metodi laskujen hakuun tietokannasta
+        /// Method for getting invoices from the database
         /// </summary>
         /// <returns></returns>
         public ObservableCollection<Invoice> GetInvoices()
@@ -254,7 +254,7 @@ namespace KloHarjoitusTyö
                         InvoiceeAddress = dr.GetString("InvoiceeAddress"),
                         Date = dr.GetDateTime("Date"),
                         DueDate = dr.GetDateTime("DueDate"),
-                        Lisatiedot = dr.IsDBNull(dr.GetOrdinal("Lisatiedot")) ? null : dr.GetString("Lisatiedot")
+                        AdditionalInfo = dr.IsDBNull(dr.GetOrdinal("Lisatiedot")) ? null : dr.GetString("Lisatiedot")
                     };
 
                     GetInvoiceLines(newInvoice);
@@ -269,7 +269,7 @@ namespace KloHarjoitusTyö
 
 
         /// <summary>
-        /// Metodi tuotteiden lisäämiseksi
+        /// Method for adding products to the database
         /// </summary>
         /// <param name="product"></param>
         public void AddProduct(Product product)
@@ -289,7 +289,7 @@ namespace KloHarjoitusTyö
 
         }
         /// <summary>
-        /// Metodi tuotteiden päivittämiseksi
+        /// Method for updating products in the database
         /// </summary>
         /// <param name="product"></param>
         public void UpdateProduct(Product product)
@@ -310,7 +310,7 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Metodi tuotteiden poistamiseksi, Muuttaa Distcontinued arvoa.
+        /// Method for removing products from the database, for now it only changes the Discontinued value.
         /// </summary>
         /// <param name="product"></param>
         public void RemoveProduct(Product product)
@@ -326,10 +326,10 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Hakee laskurivit
+        /// Gets the invoice lines
         /// </summary>
         /// <param name="invoice"></param>
-        public void GetInvoiceLines(Invoice invoice) // muutettu private > public
+        public void GetInvoiceLines(Invoice invoice)
         {
             using (MySqlConnection conn = new MySqlConnection(localWithDb))
             {
@@ -355,11 +355,11 @@ namespace KloHarjoitusTyö
 
 
         /// <summary>
-        /// Tallentaa laskurivin
+        /// Saves the invoice line
         /// </summary>
         /// <param name="line"></param>
         /// <param name="invoiceID"></param>
-        public void SaveInvoiceLine(InvoiceLine line, int invoiceID) // Kopioitu, HUOM, ymmärrä ja kommentoi
+        public void SaveInvoiceLine(InvoiceLine line, int invoiceID)
         {
             using (MySqlConnection conn = new MySqlConnection(localWithDb))
             {
@@ -373,7 +373,7 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Poistaa laskurivin
+        /// Delete invoice line
         /// </summary>
         /// <param name="line"></param>
         public void DeleteInvoiceLine(InvoiceLine line)
@@ -388,7 +388,7 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Hakee viimeisimmän laskun ID:n
+        /// Get the ID of the last inserted invoice
         /// </summary>
         /// <returns>ID</returns>
         public int GetLastInvoiceId()
@@ -417,7 +417,7 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Tallentaa laskun
+        /// Saves the invoice
         /// </summary>
         /// <param name="invoice"></param>
         public void SaveInvoice(Invoice invoice)
@@ -431,7 +431,7 @@ namespace KloHarjoitusTyö
                 cmd.Parameters.AddWithValue("@address", invoice.InvoiceeAddress);
                 cmd.Parameters.AddWithValue("@date", invoice.Date);
                 cmd.Parameters.AddWithValue("@dueDate", invoice.DueDate);
-                cmd.Parameters.AddWithValue("@lisatiedot", invoice.Lisatiedot);
+                cmd.Parameters.AddWithValue("@lisatiedot", invoice.AdditionalInfo);
 
                 cmd.ExecuteNonQuery();
 
@@ -464,7 +464,7 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Tallentaa uuden laskun
+        /// Save new invoice
         /// </summary>
         /// <param name="invoice"></param>
         public void SaveNewInvoice(Invoice invoice) 
@@ -477,7 +477,7 @@ namespace KloHarjoitusTyö
                 cmd.Parameters.AddWithValue("@address", invoice.InvoiceeAddress);
                 cmd.Parameters.AddWithValue("@date", invoice.Date);
                 cmd.Parameters.AddWithValue("@dueDate", invoice.DueDate);
-                cmd.Parameters.AddWithValue("@lisatiedot", invoice.Lisatiedot);
+                cmd.Parameters.AddWithValue("@lisatiedot", invoice.AdditionalInfo);
 
                 cmd.ExecuteNonQuery();
 
@@ -500,7 +500,7 @@ namespace KloHarjoitusTyö
 
 
         /// <summary>
-        /// Poistaa laskun
+        /// Delete invoice
         /// </summary>
         /// <param name="invoice"></param>
         public void DeleteInvoice(Invoice invoice)
@@ -525,7 +525,7 @@ namespace KloHarjoitusTyö
             }
         }
         /// <summary>
-        /// Hakee totalin tietokannasta
+        /// Gets the total from the database
         /// </summary>
         /// <param name="invoiceId"></param>
         /// <returns>total</returns>

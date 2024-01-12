@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace KloHarjoitusTyö
+namespace CoolApp
 {
     /// <summary>
     /// Interaction logic for Details.xaml
@@ -32,21 +32,21 @@ namespace KloHarjoitusTyö
             comProductColumn.ItemsSource = repo.GetProducts();
 
 
-            invoice.Total = repo.GetTotalFromDatabase(invoice.InvoiceID); // Haetaan laskun summa tietokannasta
+            invoice.Total = repo.GetTotalFromDatabase(invoice.InvoiceID); // Get total from database
 
             this.DataContext = invoice;
 
         }
 
         /// <summary>
-        /// Tallentaa muutokset
+        /// Saves the changes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Save(object sender, RoutedEventArgs e)
         {
             var invoice = (Invoice)this.DataContext;
-            invoice.Lisatiedot = additionalInfo.Text;
+            invoice.AdditionalInfo = additionalInfo.Text;
 
             Repository repo = new Repository();
 
@@ -56,11 +56,11 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Poistaa tuoterivin
+        /// Deletes the line from the invoice
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DeleteLine_Click(object sender, RoutedEventArgs e) // Toimii ilman Savea, en saanut toimimaan sen kanssa.
+        private void DeleteLine_Click(object sender, RoutedEventArgs e) // Works without save, WIP!
         {
             var button = (Button)sender;
             var invoiceLine = (InvoiceLine)button.DataContext;
@@ -74,7 +74,7 @@ namespace KloHarjoitusTyö
         }
 
         /// <summary>
-        /// Poistaa laskun + varoitukset
+        /// Deletes the invoice + warnings
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
