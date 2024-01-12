@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Documents;
 
-namespace KloHarjoitusTyö
+namespace CoolApp
 {
     public class Repository
     {
