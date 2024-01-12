@@ -17,3 +17,7 @@ Welcome to the updated version of my event-driven programming project. This vers
 
 ## 7.1.2024
 - Project base uploaded and created README
+
+## 12.1.2024
+- Translations made
+- Came up with issues to be corrected
