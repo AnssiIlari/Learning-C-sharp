@@ -1,4 +1,4 @@
-# CRM v2.0 - Updated Event-Driven Programming practical work
+# Program 2.0 - Updated Event-Driven Programming practical work
 
 ## Introduction
 Welcome to the updated version of my event-driven programming project. This version includes numerous bug fixes, error handling improvements, translations, updated functionalities, and enhanced visuals. This repository also serves as a learning tool for mastering GitHub and event-driven programming concepts.
