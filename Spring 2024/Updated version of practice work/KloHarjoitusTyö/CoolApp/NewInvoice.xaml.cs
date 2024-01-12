@@ -29,19 +29,18 @@ namespace CoolApp
             InitializeComponent();
 
 
-            var newInvoice = new Invoice // Uuden laskun luontia
+            var newInvoice = new Invoice // Creating new invoice
             {
                 InvoiceID = 0,
                 Date = DateTime.Today,
                 InvoiceeName = "",
                 InvoiceeAddress = "",
-                //InvoiceLines = new ObservableCollection<InvoiceLine>()
             };
 
             Repository repo = new Repository();
-            repo.SaveInvoice(newInvoice); // tallennetaan lasku
+            repo.SaveInvoice(newInvoice); // save
 
-            newInvoice.InvoiceID = repo.GetLastInvoiceId(); // Haetaan seuraava id
+            newInvoice.InvoiceID = repo.GetLastInvoiceId(); // Gets next id
 
             this.DataContext = newInvoice;
             comProductColumn.ItemsSource = repo.GetProducts();
@@ -50,7 +49,7 @@ namespace CoolApp
         }
 
         /// <summary>
-        /// Tallentaa laskun
+        /// Saves the invoice to the database
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

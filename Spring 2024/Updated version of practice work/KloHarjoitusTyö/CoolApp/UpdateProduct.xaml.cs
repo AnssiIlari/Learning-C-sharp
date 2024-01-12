@@ -26,7 +26,7 @@ namespace CoolApp
             this.DataContext = product;
         }
         /// <summary>
-        /// Päivittää tuotteen tiedot
+        /// updates the product information
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

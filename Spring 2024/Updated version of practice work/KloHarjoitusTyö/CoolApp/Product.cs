@@ -11,7 +11,6 @@ namespace CoolApp
     /// </summary>
     public class Product
     {
-        // parametrit
         public string Description { get; set; }
         public int Price { get; set; }
         public string Unit { get; set; }
