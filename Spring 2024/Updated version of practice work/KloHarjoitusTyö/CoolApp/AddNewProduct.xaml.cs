@@ -25,7 +25,7 @@ namespace CoolApp
             this.DataContext = new Product();
         }
         /// <summary>
-        /// Lisää tuotteen 
+        /// Adds a product 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

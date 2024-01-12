@@ -32,14 +32,14 @@ namespace CoolApp
             comProductColumn.ItemsSource = repo.GetProducts();
 
 
-            invoice.Total = repo.GetTotalFromDatabase(invoice.InvoiceID); // Haetaan laskun summa tietokannasta
+            invoice.Total = repo.GetTotalFromDatabase(invoice.InvoiceID); // Get total from database
 
             this.DataContext = invoice;
 
         }
 
         /// <summary>
-        /// Tallentaa muutokset
+        /// Saves the changes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -56,11 +56,11 @@ namespace CoolApp
         }
 
         /// <summary>
-        /// Poistaa tuoterivin
+        /// Deletes the line from the invoice
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DeleteLine_Click(object sender, RoutedEventArgs e) // Toimii ilman Savea, en saanut toimimaan sen kanssa.
+        private void DeleteLine_Click(object sender, RoutedEventArgs e) // Works without save, WIP!
         {
             var button = (Button)sender;
             var invoiceLine = (InvoiceLine)button.DataContext;
@@ -74,7 +74,7 @@ namespace CoolApp
         }
 
         /// <summary>
-        /// Poistaa laskun + varoitukset
+        /// Deletes the invoice + warnings
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

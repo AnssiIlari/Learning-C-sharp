@@ -18,14 +18,14 @@ namespace CoolApp
     public partial class AllInvoices : Window
     {
 
-        public ObservableCollection<Invoice> Invoices { get; set; } // Lista laskuista
+        public ObservableCollection<Invoice> Invoices { get; set; } // List of invoices
 
         public AllInvoices()
         {
             InitializeComponent();
             Repository repo = new Repository();
-            Invoices = repo.GetInvoices(); // Haetaan laskut tietokannasta
-            foreach (var invoice in Invoices) // Haetaan totalit
+            Invoices = repo.GetInvoices(); // Gets invoices from database
+            foreach (var invoice in Invoices) // Gets total for each invoice
             {
                 invoice.Total = repo.GetTotalFromDatabase(invoice.InvoiceID);
             }

@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="Invoice" Height="450" Width="800">
     <Window.DataContext>
-        <!--TÄRKEÄ-->
+        <!--IMPORTANT!-->
         <local:Invoice/>
 
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
-            <!--Tähti perässä = suhdeluku-->
+            <!--Start = ratio-->
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Label Content="ID" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
