@@ -46,7 +46,7 @@ namespace CoolApp
         private void Save(object sender, RoutedEventArgs e)
         {
             var invoice = (Invoice)this.DataContext;
-            invoice.Lisatiedot = additionalInfo.Text;
+            invoice.AdditionalInfo = additionalInfo.Text;
 
             Repository repo = new Repository();
 

@@ -254,7 +254,7 @@ namespace CoolApp
                         InvoiceeAddress = dr.GetString("InvoiceeAddress"),
                         Date = dr.GetDateTime("Date"),
                         DueDate = dr.GetDateTime("DueDate"),
-                        Lisatiedot = dr.IsDBNull(dr.GetOrdinal("Lisatiedot")) ? null : dr.GetString("Lisatiedot")
+                        AdditionalInfo = dr.IsDBNull(dr.GetOrdinal("Lisatiedot")) ? null : dr.GetString("Lisatiedot")
                     };
 
                     GetInvoiceLines(newInvoice);
@@ -431,7 +431,7 @@ namespace CoolApp
                 cmd.Parameters.AddWithValue("@address", invoice.InvoiceeAddress);
                 cmd.Parameters.AddWithValue("@date", invoice.Date);
                 cmd.Parameters.AddWithValue("@dueDate", invoice.DueDate);
-                cmd.Parameters.AddWithValue("@lisatiedot", invoice.Lisatiedot);
+                cmd.Parameters.AddWithValue("@lisatiedot", invoice.AdditionalInfo);
 
                 cmd.ExecuteNonQuery();
 
@@ -477,7 +477,7 @@ namespace CoolApp
                 cmd.Parameters.AddWithValue("@address", invoice.InvoiceeAddress);
                 cmd.Parameters.AddWithValue("@date", invoice.Date);
                 cmd.Parameters.AddWithValue("@dueDate", invoice.DueDate);
-                cmd.Parameters.AddWithValue("@lisatiedot", invoice.Lisatiedot);
+                cmd.Parameters.AddWithValue("@lisatiedot", invoice.AdditionalInfo);
 
                 cmd.ExecuteNonQuery();
 

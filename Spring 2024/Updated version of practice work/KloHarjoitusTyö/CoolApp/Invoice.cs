@@ -28,7 +28,7 @@ namespace CoolApp
         public string InvoiceeAddress { get; set; }
         public DateTime Date { get; set; }
         public DateTime DueDate { get; set; }
-        public string Lisatiedot { get; set; } // TÄmä vielä suomeksi, ei ollutkaan helppo muuttaa
+        public string AdditionalInfo { get; set; }
         public int Total { get; set; }
 
 
