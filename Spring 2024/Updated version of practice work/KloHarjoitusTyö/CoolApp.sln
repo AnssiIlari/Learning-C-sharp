@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoolApp", "KloHarjoitusTyö\CoolApp.csproj", "{5A5A1C62-0AFE-4374-A6AE-B7C3EB319D20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoolApp", "CoolApp\CoolApp.csproj", "{5A5A1C62-0AFE-4374-A6AE-B7C3EB319D20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
