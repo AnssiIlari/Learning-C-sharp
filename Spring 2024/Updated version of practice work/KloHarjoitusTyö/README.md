@@ -21,3 +21,7 @@ Welcome to the updated version of my event-driven programming project. This vers
 ## 12.1.2024
 - Translations made
 - Came up with issues to be corrected
+
+## 13.1.2024
+- Bug fixes and security update
+- Kept original commit history eventhough leaked "credentials" (for educational purposes)
