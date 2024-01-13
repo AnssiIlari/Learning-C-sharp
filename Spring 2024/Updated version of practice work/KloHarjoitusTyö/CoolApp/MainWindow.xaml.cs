@@ -110,16 +110,24 @@ namespace CoolApp
         }
 
         /// <summary>
-        /// Open a window where you can see details of a single invoice
+        /// Open a window where you can see details of a single invoice, shows a warning if product is not selected
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void DetailsAndUpdate(object sender, RoutedEventArgs e)
         {
             var detailsWindow = (Invoice)comInvoices.SelectedValue;
-            Details details = new Details(detailsWindow);
-            details.ShowDialog();
-            comInvoices.ItemsSource = repo.GetInvoices(); // Lisäys
+
+            if (detailsWindow != null)
+            {
+                Details details = new Details(detailsWindow);
+                details.ShowDialog();
+                comInvoices.ItemsSource = repo.GetInvoices();
+            }
+            else
+            {
+                MessageBox.Show("Please select a product.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         /// <summary>
         /// Opens a window where you can create a new invoice
