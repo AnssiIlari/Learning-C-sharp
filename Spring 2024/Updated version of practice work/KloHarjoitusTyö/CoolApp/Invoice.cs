@@ -15,9 +15,6 @@ namespace CoolApp
     /// </summary>
     public class Invoice
     {
-        private const string local = @"Server=127.0.0.1; Port=3306; User ID=opiskelija; Pwd=opiskelija1;";
-        private const string localWithDb = @"Server=127.0.0.1; Port=3306; User ID=opiskelija; Pwd=opiskelija1; Database=Orders;";
-
         public ObservableCollection<InvoiceLine> InvoiceLines { get; set; }
 
         public int InvoiceID { get; set; } // Primary key
