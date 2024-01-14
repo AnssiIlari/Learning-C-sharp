@@ -25,3 +25,6 @@ Welcome to the updated version of my event-driven programming project. This vers
 ## 13.1.2024
 - Bug fixes and security update
 - Kept original commit history eventhough leaked "credentials" (for educational purposes)
+
+- ## 14.1.2024
+- Bug fix
