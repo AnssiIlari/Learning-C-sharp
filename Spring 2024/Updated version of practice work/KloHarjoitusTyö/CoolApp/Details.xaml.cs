@@ -60,17 +60,21 @@ namespace CoolApp
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DeleteLine_Click(object sender, RoutedEventArgs e) // Works without save, WIP!
+        private void DeleteLine_Click(object sender, RoutedEventArgs e)
         {
-            var button = (Button)sender;
-            var invoiceLine = (InvoiceLine)button.DataContext;
+            // Ask for conirmation
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this line?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                var button = (Button)sender;
+                var invoiceLine = (InvoiceLine)button.DataContext;
 
-            var invoice = (Invoice)DataContext;
-            invoice.InvoiceLines.Remove(invoiceLine);
+                var invoice = (Invoice)DataContext;
+                invoice.InvoiceLines.Remove(invoiceLine);
 
-
-            Repository repo = new Repository();
-            repo.DeleteInvoiceLine(invoiceLine);
+                Repository repo = new Repository();
+                repo.DeleteInvoiceLine(invoiceLine);
+            }
         }
 
         /// <summary>
