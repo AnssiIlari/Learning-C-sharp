@@ -21,9 +21,6 @@ namespace CoolApp
     {
         private ObservableCollection<InvoiceLine> invoiceLines;
 
-        private string? local = Environment.GetEnvironmentVariable("KLOSQL");
-        private string? localWithDb = Environment.GetEnvironmentVariable("KLOSQLWithDB");
-
         public NewInvoice()
         {
             InitializeComponent();
@@ -55,31 +52,13 @@ namespace CoolApp
         /// <param name="e"></param>
         private void SaveInvoice(object sender, RoutedEventArgs e)
         {
-
-
             var invoice = (Invoice)this.DataContext;
             invoice.AdditionalInfo = additionalInfo.Text;
 
             Repository repo = new Repository();
             repo.SaveNewInvoice(invoice);
 
-            int invoiceID = 0;
-
-            using (MySqlConnection conn = new MySqlConnection(localWithDb))
-            {
-                conn.Open();
-
-                MySqlCommand cmd = new MySqlCommand("SELECT LAST_INSERT_ID()", conn);
-                invoiceID = Convert.ToInt32(cmd.ExecuteScalar());
-
-                foreach (var line in invoiceLines)
-                {
-                    line.InvoiceID = invoiceID;
-                    repo.SaveInvoiceLine(line, invoiceID);
-                }
-            }
             this.Close();
-
         }
 
     }
