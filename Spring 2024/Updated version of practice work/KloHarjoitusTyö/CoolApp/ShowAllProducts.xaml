@@ -13,14 +13,17 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100" />
                         <ColumnDefinition Width="100" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="{Binding ID}" />
+                    <TextBlock Text="{Binding ID, StringFormat='ID: {0}'}" />
                     <TextBlock Text="{Binding Description}" Grid.Row="1" Grid.Column="1" />
-                    <TextBlock Text="{Binding Price}" Grid.Column="1" />
+                    <TextBlock Text="{Binding Price, StringFormat='Price: {0}'}" Grid.Row="2" />
+                    <TextBlock Text="{Binding Unit, StringFormat='Unit: {0}'}" Grid.Row="3" />
                 </Grid>
             </Border>
         </DataTemplate>
