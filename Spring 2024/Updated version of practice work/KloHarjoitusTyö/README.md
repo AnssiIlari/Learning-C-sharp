@@ -28,3 +28,10 @@ Welcome to the updated version of my event-driven programming project. This vers
 
 - ## 14.1.2024
 - Bug fix
+
+.....
+
+
+## 21.1.2024
+
+Major updates considering usability has to be done in the near future. These will include complete overhaul of the UI. For the time being I am focusing on fixing bugs and making things work backend.
