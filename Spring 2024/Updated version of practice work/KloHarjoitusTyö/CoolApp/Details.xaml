@@ -9,7 +9,7 @@
     <Window.DataContext>
         <!--IMPORTANT!-->
         <local:Invoice/>
-
+        <!--IMPORTANT!-->
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
@@ -46,7 +46,6 @@
                 <DataGridTextColumn Header="Quantity" Width="60" Binding="{Binding Quantity}"/>
                 <DataGridComboBoxColumn Header="Product" DisplayMemberPath="Description" SelectedValuePath="ID"
                                         SelectedValueBinding="{Binding ProductID}" x:Name="comProductColumn"/>
-                <!--<DataGridTextColumn Header="Price" Width="60" Binding="{Binding ProductID}" />-->
                 <DataGridTemplateColumn Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

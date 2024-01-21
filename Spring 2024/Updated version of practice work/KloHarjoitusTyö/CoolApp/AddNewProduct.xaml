@@ -6,10 +6,6 @@
         xmlns:local="clr-namespace:CoolApp"
         mc:Ignorable="d"
         Title="Add new product" Height="200" Width="300">
-    <!--<Window.DataContext>
-        <local:Product/>
-
-    </Window.DataContext>-->
     <Canvas>
         <Label Content="ID" Canvas.Left="11" Canvas.Top="10"/>
         <Label Content="Description" Canvas.Left="11" Canvas.Top="33" HorizontalAlignment="Left"

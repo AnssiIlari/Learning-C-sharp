@@ -36,13 +36,6 @@
                 <DataGridTextColumn Header="Quantity" Width="60" Binding="{Binding Quantity}"/>
                 <DataGridComboBoxColumn Header="Product" DisplayMemberPath="Description" SelectedValuePath="ID"
                                         SelectedValueBinding="{Binding ProductID}" x:Name="comProductColumn"/>
-                <!--<DataGridTemplateColumn Header="">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Delete" Command="{Binding DataContext.DeleteLineCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Additional information" HorizontalAlignment="Left" Margin="340,24,0,0" VerticalAlignment="Top"/>
