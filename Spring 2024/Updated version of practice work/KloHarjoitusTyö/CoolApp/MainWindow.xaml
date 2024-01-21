@@ -9,6 +9,7 @@
     <!--<Window.DataContext>
         <local:Product/>
     </Window.DataContext>-->
+    <!--// FOR FUTURE REFERENCE:-->
 
     <Grid>
         <Grid.RowDefinitions>
